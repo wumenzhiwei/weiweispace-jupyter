@@ -8,6 +8,7 @@ def loaddata(flilename):
     x=[]
     y=[]
     for line in fr.readlines():
+        print(line)
         line=line.strip().split()
         x.append(float(line[0]))
         y.append(float(line[1]))
@@ -17,5 +18,11 @@ def loaddata(flilename):
 
 #SHOW
 xmat,ymat=loaddata('文本.txt')
-print('xmat:',xmat)
-print('ymat:',ymat)
+print('xmat:',xmat,xmat.shape,type(xmat))
+print('ymat:',ymat,ymat.shape,type(xmat))
+
+plt.scatter(xmat.A,ymat.A,s=100,c='r')
+plt.grid(True)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
